@@ -1,0 +1,44 @@
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0         ;
+}
+
+ul li a {
+    height: 35rem;
+    width: 25rem;
+    border: 2px solid Whitesmoke;
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: brown;
+    text-decoration: none;
+}
+
+li a:hover{
+    opacity:0.9;
+    cursor: pointer;
+}
+
+.name h2 {
+    font-size: 24px; 
+    color: #333; 
+    text-align: center; 
+    margin: 20px 0; 
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .description p {
+    font-size: 16px; 
+    color: #555; 
+    line-height: 1.5; 
+    padding: 20px 10px; 
+    text-align: justify; 
+    font-family: 'Arial', sans-serif; 
+  }
+  

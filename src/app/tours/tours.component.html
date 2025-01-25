@@ -1,1 +1,32 @@
-<p>tours works!</p>
+<div
+  id="carouselExampleSlidesOnly"
+  class="carousel slide"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="knuckels.jpg" class="d-block w-100" alt="..." />
+      <ul><li *ngFor="let tour of tours">
+        <a routerLink="/Tours/{{tour.name}}">  
+          <img src="{{tour.imageUrl}}" alt="">    
+          <div class="content">
+            <div class="name"><h2>{{tour.name}}</h2></div>
+            <div class="description"> <p>{{tour.description}}</p></div>
+           <!-- <span class="favourite {{tour.stars?'':'not'}}">❤</span> -->
+           <!-- <star-rating 
+           [value]="tour.stars" 
+           [totalstars]="5" 
+           checkedcolor="red" 
+           uncheckedcolor="black" 
+           size="24px" 
+           [readonly]="true" >
+          </star-rating> -->
+
+          </div>
+        </a>
+               
+      </li></ul>
+    </div>
+  </div>
+</div>
+

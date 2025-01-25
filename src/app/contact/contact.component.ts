@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { GlobalConstant } from '../shared/global-constant';
-import emailjs from '@emailjs/browser';
-import { environment } from '../../environment/environment';
+import emailjs from '@emailjs/browser';import { environment } from '../../environment/environment';
 import { Router } from '@angular/router';
 
 @Component({

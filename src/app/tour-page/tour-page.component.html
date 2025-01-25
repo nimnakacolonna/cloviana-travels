@@ -1,0 +1,97 @@
+
+<div
+  id="carouselExampleSlidesOnly"
+  class="carousel slide"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img [src]="tour.imageUrl" class="d-block w-100" alt="tour.name" />
+    </div>
+  </div>
+</div>
+<div class="tour-page">
+<div class="container">
+<div class="text">
+  <div class="header">
+   
+    <h1> {{tour.name}}</h1> 
+    
+  </div>
+  <div class="description">
+    <p>{{tour.description}}</p>
+  </div>
+  <div class="tour-descriptionSec1">
+    <h2>Why You’ll Love this Trip</h2>
+    <ul>
+      <li *ngFor="let Sec1Point of tour.descriptionPointsSection1">{{Sec1Point}}</li>
+    </ul>
+  </div>
+  <div class="tour-descriptionSec2">
+    <h2>Is This Trip Right For You?</h2>
+    <ul>
+      <li *ngFor="let Sec2Point of tour.descriptionPointsSection2">{{Sec2Point}}</li>
+    </ul>
+  </div>
+
+  <div class="inclusions">
+    <h2>Inclusions</h2>
+    <div *ngFor="let inclusion of tour.inclusions">
+      <p> <i class="fas fa-utensils"></i><span class="separator"></span><strong>Meals :</strong><br><span class="separator"></span> {{ inclusion.mealDes }}</p>
+      <hr class="section-divider" />
+      <p><i class="fas fa-bus"></i><span class="separator"></span><strong>Transport :</strong><br><span class="separator"></span> {{ inclusion.transportDes }}</p>
+      <hr class="section-divider" />
+      <p>   <i class="fas fa-bed"></i><span class="separator"></span><strong>Accommodation :</strong><br><span class="separator"></span> {{ inclusion.accommodateDes }}</p>
+      <hr class="section-divider" />
+      <p><strong>Activities :</strong></p>
+      <ul>
+        <li *ngFor="let activity of inclusion.activityDes">{{ activity }}</li>
+      </ul>
+    </div>
+  </div> 
+
+</div>
+<div class="iframe-container">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d2029644.1943509448!2d79.20118065242973!3d6.502837818003945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e0!4m5!1s0x3ae253d10f7a7003%3A0x320b2e4d32d3838d!2sColombo!3m2!1d6.9270786!2d79.861243!4m5!1s0x3ae465955bc09a25%3A0xbdfadcdadec487fb!2sElla!3m2!1d6.8666988!2d81.046553!5e0!3m2!1sen!2slk!4v1737540226274!5m2!1sen!2slk'" frameborder="0"></iframe>
+  <!-- <iframe [src]='tour.iframe'
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade" frameborder="0">
+</iframe> -->
+<div class="highlight-box">
+  <p><strong>Distance:</strong> 200 km <span class="separator"></span> <strong>Time:</strong> 3 hours</p>
+</div>
+</div>
+</div>
+
+  <!-- Itinerary Section -->
+  <div class="itinerary">
+    <h2>Itinerary</h2>
+    <div
+      class="itinerary-entry"
+      *ngFor="let day of tour.itinerary; let i = index"
+    >
+      <!-- Fixed layout for Day and Details -->
+      <div class="itinerary-header" (click)="toggleExpand(i)">
+        <span class="day-number">Day {{ day.day }}</span>
+     
+        <span class="separator">|</span>
+        <span class="details">{{ day.details }}</span>
+        <span class="expand-icon">
+          {{ expandedIndex === i ? '-' : '+' }}
+        </span>
+      
+      </div>
+
+      <!-- Expandable Content -->
+      <div class="expandable-content" *ngIf="expandedIndex === i">
+    
+        <p>{{ day.description }}expand sectiona monfwo nefonwof nofnqoenr anfonef</p>
+      </div>
+    </div>
+    
+  </div>
+
+
+
+</div>

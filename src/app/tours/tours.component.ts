@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ToursService } from '../services/tours/tours.service';
+import { Tour } from '../shared/models/tours';
 
 @Component({
   selector: 'app-tours',
@@ -7,6 +9,13 @@ import { Component } from '@angular/core';
   templateUrl: './tours.component.html',
   styleUrl: './tours.component.css'
 })
-export class ToursComponent {
+export class ToursComponent implements OnInit{
+
+  tours:Tour[]=[];
+  constructor(private toursService:ToursService){}
+
+  ngOnInit(): void {
+    this.tours = this.toursService.getAll();
+  }
 
 }
